@@ -1,0 +1,1 @@
+export default function Privacy(){ return (<div className='container p-6'><h1 className='text-2xl font-bold'>Privacy Policy</h1><p>Placeholder privacy policy. Replace before launch.</p></div>); }

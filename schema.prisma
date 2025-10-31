@@ -1,0 +1,55 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  phone     String?  @unique
+  password  String
+  name      String?
+  role      String   @default("buyer")
+  balance   Int      @default(0)
+  createdAt DateTime @default(now())
+  products  Product[]
+  orders    Order[]
+}
+
+model Product {
+  id               Int      @id @default(autoincrement())
+  title            String
+  description      String?
+  price            Int      @default(0)
+  type             String   @default("paid") // paid / free
+  downloadUrl      String?
+  sellerId         Int?
+  commissionPercent Int     @default(10)
+  createdAt        DateTime @default(now())
+}
+
+model Order {
+  id         Int      @id @default(autoincrement())
+  userId     Int
+  productId  Int?
+  amount     Int
+  platformCommission Int
+  status     String   @default("pending")
+  createdAt  DateTime @default(now())
+}
+
+model TopupTransaction {
+  id         Int      @id @default(autoincrement())
+  userId     Int
+  game       String
+  uid        String
+  amount     Int
+  provider   String
+  providerOrderId String?
+  status     String   @default("pending")
+  createdAt  DateTime @default(now())
+}

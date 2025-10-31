@@ -1,0 +1,1 @@
+export default function Refund(){ return (<div className='container p-6'><h1 className='text-2xl font-bold'>Refund Policy</h1><p>Placeholder refund policy. Define refund windows.</p></div>); }

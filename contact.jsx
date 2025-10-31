@@ -1,0 +1,1 @@
+export default function Contact(){ return (<div className='container p-6'><h1 className='text-2xl font-bold'>Contact Us</h1><p>Email: your-email@gmail.com (replace in code)</p></div>); }
