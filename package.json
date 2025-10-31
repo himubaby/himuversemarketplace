@@ -1,12 +1,11 @@
 {
-  "name": "himuverse-marketplace",
+  "name": "himuverse-marketplace-fixed",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "seed": "node prisma/seed.js"
+    "start": "next start"
   },
   "dependencies": {
     "next": "13.5.6",
